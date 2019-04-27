@@ -1,6 +1,7 @@
 #pragma once
-#ifndef BULLPGIA_GUESSER_HPP
+#ifndef BULLPGIA_GUESSER_HPP 
 #define BULLPGIA_GUESSER_HPP
+#endif
 #include <string>
 using namespace std;
 typedef unsigned int uint;

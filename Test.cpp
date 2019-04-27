@@ -9,6 +9,7 @@
 #include <iostream>
 using namespace std;
 
+#include "calculate.hpp"
 #include "play.hpp"
 #include "DummyChoosers.hpp"
 #include "DummyGuessers.hpp"
