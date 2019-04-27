@@ -1,5 +1,7 @@
-#include <string>
-using namespace std;
-namespace bullpgia{
-    string calculateBullAndPgia(string c, string g);
-}
+#ifndef CALCULATE_HPP
+#define CALCULATE_HPP
+#include <iostream>
+
+std::string calculateBullAndPgia(std::string expected, std::string real);
+
+#endif
