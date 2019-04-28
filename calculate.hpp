@@ -1,7 +1,4 @@
-#ifndef CALCULATE_HPP
-#define CALCULATE_HPP
+#pragma once
 #include <iostream>
 
 std::string calculateBullAndPgia(std::string expected, std::string real);
-
-#endif
