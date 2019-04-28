@@ -7,6 +7,7 @@
 
 
 #include <iostream>
+
 using namespace std;
 
 #include "calculate.hpp"
@@ -27,8 +28,12 @@ int main() {
 	if (signal == 0) {
 
 		// BASIC TESTS - DO NOT CHANGE
-		ConstantChooser c1234{"1234"}, c12345{"12345"}, c9999{"9999"};
-		ConstantGuesser g1234{"1234"}, g12345{"12345"}, g9999{"9999"};
+		ConstantChooser c1235{"1235"}, c12345{"12345"}, c5674{"5674"}, c0000{"0000"}, c1234{"1234"}, c5555{"5555"}, c5634{"5634"};
+		ConstantGuesser g1234{"1234"}, g4567{"4567"}, g9999{"9999"}, g3412{"3412"}, g5555{"5555"}, g1134{"1134"}, g5678{"5678"}, g5643{"5643"};
+		ConstantChooser c9999{"9999"};
+		ConstantGuesser g12345{"12345"};
+		ConstantChooser c45678{"45678"}, c45678111{"45678111"}, c1000{"1000"}, c11{"11"}, c123456789{"123456789"}, c98765{"98765"};
+		ConstantGuesser g45678{"45678"}, g45678111{"45678111"}, g19{"19"}, g1234567890{"1234567890"}, g9876{"9876"};
 
 		testcase.setname("Calculate bull and pgia")
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","1234"), "4,0")      // 4 bull, 0 pgia
@@ -49,8 +54,6 @@ int main() {
 			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=10, true);  // smarty should always win in at most 10 turns!
 		}
 		//our tests:
-		ConstantChooser c1235{"1235"}, c5674{"5674"}, c5674{"5674"}, c0000{"0000"}, c1234{"1234"}, c5555{"5555"}, c5634{"5634"};
-		ConstantGuesser g1234{"1234"}, g4567{"4567"}, g9999{"9999"}, g3412{"3412"}, g5555{"5555"}, g1134{"1134"}, g5678{"5678"}, g5643{"5643"};
 		testcase.setname("Calculate bull and pgia")
 		.CHECK_OUTPUT(calculateBullAndPgia("1235","1234"), "3,0")      // 3 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("5674","4567"), "0,4")      // 0 bull, 4 pgia
@@ -62,8 +65,7 @@ int main() {
 		.CHECK_OUTPUT(calculateBullAndPgia("5634","5643"), "2,2")      // 2 bull, 2 pgia
 		;
 
-		ConstantChooser c45678{"45678"}, c45678111{"45678111"}, c1000{"1000"}, c11{"11"}, c123456789{"123456789"}, c98765{"98765"};
-		ConstantGuesser g45678{"45678"}, g45678111{"45678111"}, g9999{"9999"}, g19{"19"}, g1234567890{"1234567890"}, g9876{"9876"};
+		
 		testcase.setname("Play with dummy choosers and guessers")
 		.CHECK_EQUAL(play(c45678, g45678, 5, 100), 1)      // guesser wins in one turn.
 		.CHECK_EQUAL(play(c45678111, g45678111, 8, 100), 1)      // guesser wins in one turn.
@@ -81,7 +83,8 @@ int main() {
 		for (uint i=0; i<100; ++i) {
 			c = '0' + (i%10);
 			r += c;
-			testcase.CHECK_EQUAL(play(r, smarttest, 4, 100)<=10, true);  // smarttest should always win in at most 10 turns!
+			ConstantChooser cr {r};
+			testcase.CHECK_EQUAL((play(cr, smarttest, 4, 100))<=10), true);   // smarttest should always win in at most 10 turns!
 		}
 
     grade = testcase.grade();
