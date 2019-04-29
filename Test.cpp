@@ -76,16 +76,13 @@ int main() {
 		;
 
 		testcase.setname("Play with smart guesser");
-		std::string r="";
-		char c = '0' + (9%10);
-		r += c;
-		SmartGuesser smarttest;
+		
+		RandomChooser r;
+		SmartGuesser smartestguesser;
+	
 		for (uint i=0; i<100; ++i) {
-			c = '0' + (i%10);
-			r += c;
-			ConstantChooser cr {r};
-			testcase.CHECK_EQUAL((play(cr, smarttest, 4, 100))<=10), true);   // smarttest should always win in at most 10 turns!
-		}
+			testcase.CHECK_EQUAL(play(r, smartestguesser, 4, 100)<=10, true);  // smarty should always win in at most 10 turns!
+}
 
     grade = testcase.grade();
 	} else {

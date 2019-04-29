@@ -18,7 +18,7 @@ for(int i=0; i<expected.length(); i++)
         }
       }
     } 
-} 
+} // End for
 string ans = to_string(bull) + "," + to_string(pgia);
 return ans;
 } // End calculateBullAndPgia
