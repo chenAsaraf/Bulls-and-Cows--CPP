@@ -1,8 +1,9 @@
 #pragma once
 #include "Guesser.hpp"
-using std::string;
 #include <iostream>
+#include "calculate.hpp"
 
+using std::string;
 /**
  *TheGuesser will find the number by 100 steps the most!
  */
