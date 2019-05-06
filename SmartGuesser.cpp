@@ -22,7 +22,6 @@ void SmartGuesser::learn(std::string calculateTheAnswer) {
 }
 
 void SmartGuesser::startNewGame(unsigned int length) {
-    //if(length < 0 ) throw std::invalid_argument("length cannot be smaller then 0");
     if(length > 7) {
         SmartGuesser::startNewGameLong(length);
     }
