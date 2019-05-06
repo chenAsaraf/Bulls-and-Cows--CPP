@@ -3,7 +3,7 @@ using namespace std;
 
 string SmartGuesser::guess(){
     string answer;
-    if(Stringlength > 7) {
+    if(length > 7) {
         answer = SmartGuesser::LongNumber();
     }
     else {
@@ -13,7 +13,7 @@ string SmartGuesser::guess(){
 }
 
 void SmartGuesser::learn(std::string calculateTheAnswer) {
-    if(Stringlength > 7) {
+    if(length > 7) {
         SmartGuesser::learnLongString(calculateTheAnswer);
     }
     else {
@@ -23,7 +23,7 @@ void SmartGuesser::learn(std::string calculateTheAnswer) {
 
 void SmartGuesser::startNewGame(unsigned int length) {
     if(length < 0 ) throw std::invalid_argument("length cannot be smaller then 0");
-    if(Stringlength > 7) {
+    if(length > 7) {
         SmartGuesser::startNewGameLong(length);
     }
     else {
@@ -34,8 +34,8 @@ void SmartGuesser::startNewGame(unsigned int length) {
 /////////LONG FUNCTIONS//////////
 string SmartGuesser::LongNumber() {
     string ans = "" ;
-    if(LongGuess.length() != this->Stringlength) {
-	    ans = this->toints(p,this->Stringlength);
+    if(LongGuess.length() != this->length) {
+	    ans = this->toints(p,this->length);
 	    p++;
     }
     else
@@ -49,7 +49,7 @@ string SmartGuesser::LongNumber() {
 
 void SmartGuesser::learnLongString(std::string calculateLong){
     SmartGuesser::Guesser::learn(calculateLong);
-    if(LongGuess.length() < this->Stringlength) { 
+    if(LongGuess.length() < this->length) { 
         string psik = ",";
         string sign = this->finalanswer.substr(0, this->finalanswer.find(psik)); // sign is the bull results
         int Bulls = stoi(sign);
@@ -58,7 +58,7 @@ void SmartGuesser::learnLongString(std::string calculateLong){
                     LongGuess += to_string(p-1);
                 }
         } // End Bull > 0 IF
-        if(LongGuess.length() == this->Stringlength)
+        if(LongGuess.length() == this->length)
         {
             sort(LongGuess.begin(), LongGuess.end());
             AllOptions.push_front(LongGuess); // we put the guess in our list
@@ -95,8 +95,8 @@ void SmartGuesser::startNewGameLong(unsigned int length){
 ////////SHORT FUNCTIONS//////////
 string SmartGuesser::ShortNumber() {
 	string r="";
-	if (AllOptions.size()==pow(10,Stringlength)) {
-		for (uint i=0; i < this->Stringlength; ++i) {
+	if (AllOptions.size()==pow(10,length)) {
+		for (uint i=0; i < this->length; ++i) {
 			char c = '0' + i+1;
 			r += c;
 		}

@@ -5,7 +5,7 @@
 namespace bullpgia {
     class Guesser {
     protected:
-        unsigned int Stringlength;
+        unsigned int length;
         std::string finalanswer; // how many bulls and pgias are there.
         
 
@@ -18,7 +18,7 @@ namespace bullpgia {
         //this method is starting a new game with length
         virtual void startNewGame(unsigned int length)
         {
-            this->Stringlength = length;
+            this->length = length;
         }
     
         //figures out what the finalanswer is.(how many bulls and pgias are there.)
