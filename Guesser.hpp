@@ -16,9 +16,15 @@ namespace bullpgia {
         guess() = 0;
 
         //this method is starting a new game with length
-        virtual void startNewGame(unsigned int length);
+        virtual void startNewGame(unsigned int length)
+        {
+            this->Stringlength = length;
+        }
     
         //figures out what the finalanswer is.(how many bulls and pgias are there.)
-        virtual void learn(std::string calculateFinalAnswer);
+        virtual void learn(std::string calculateFinalAnswer)
+        {
+            this->finalanswer = calculateFinalAnswer;
+        }
     };
 }
