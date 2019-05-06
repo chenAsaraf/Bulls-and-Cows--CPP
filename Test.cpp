@@ -55,12 +55,12 @@ int main() {
 		}
 		//our tests:
 		testcase.setname("Calculate bull and pgia")
-		.CHECK_OUTPUT(calculateBullAndPgia("1235","1234"), "3,0")      // 3 bull, 0 pgia
-		.CHECK_OUTPUT(calculateBullAndPgia("5674","4567"), "0,4")      // 0 bull, 4 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("12354","12345"), "3,2")      // 3 bull, 2 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("567459","456758"), "1,4")      // 1 bull, 4 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("0000","9999"), "0,0")      // 0 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","3412"), "0,4")      // 0 bull, 4 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("5555","5555"), "4,0")      // 4 bull, 0 pgia
-		.CHECK_OUTPUT(calculateBullAndPgia("1234","1134"), "3,1")      // 3 bull, 1 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","1034"), "3,0")      // 3 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("5634","5678"), "2,0")      // 2 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("5634","5643"), "2,2")      // 2 bull, 2 pgia
 		;
