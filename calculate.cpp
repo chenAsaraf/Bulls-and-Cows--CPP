@@ -3,6 +3,8 @@ using namespace std;
 string calculateBullAndPgia(string expected, string real) { 
 int bull = 0;
 int pgia = 0;
+int length = expected.length();
+int numbers[10] = {0};
 for(int i=0; i<expected.length(); i++)
 {
     if(expected.at(i) == real.at(i))
@@ -11,11 +13,13 @@ for(int i=0; i<expected.length(); i++)
     }
     else
     {
-      for(int j=i+1; j<expected.length(); j++) {
-        if(expected.at(j) == real.at(j))
-        {
-          pgia++;
-        }
+      if(numbers[real.at(i) - '0'] ++ < 0) 
+      {
+        pgia+=1;
+      }
+      if(numbers[expected.at(i) - '0'] -- > 0) 
+      {
+        pgia+=1;
       }
     } 
 } // End for

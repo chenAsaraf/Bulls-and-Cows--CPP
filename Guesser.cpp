@@ -1,7 +1,13 @@
 #include "Guesser.hpp"
-#include <string>
-using namespace bullpgia;
-void learn (string s){
+using namespace std;
+
+
+void bullpgia::Guesser::startNewGame(unsigned int length)
+{
+    this->Stringlength = length;
 }
-void startNewGame(uint uint){
+
+void bullpgia::Guesser::learn(std::string calculateFinalAnswer)
+{
+    this->finalanswer = calculateFinalAnswer;
 }
