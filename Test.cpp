@@ -55,14 +55,22 @@ int main() {
 		}
 		//our tests:
 		testcase.setname("Calculate bull and pgia")
-		.CHECK_OUTPUT(calculateBullAndPgia("12354","12345"), "3,2")      // 3 bull, 2 pgia
-		.CHECK_OUTPUT(calculateBullAndPgia("567459","456758"), "1,4")      // 1 bull, 4 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("12354","12345"), "3,2")    // 3 bull, 2 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("567459","456758"), "1,4")  // 1 bull, 4 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("0000","9999"), "0,0")      // 0 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","3412"), "0,4")      // 0 bull, 4 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("5555","5555"), "4,0")      // 4 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","1034"), "3,0")      // 3 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("5634","5678"), "2,0")      // 2 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("5634","5643"), "2,2")      // 2 bull, 2 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("1","5"), "0,0")            // 0 bull, 0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("12333333777781782737747599983002988478434433245980645646", "12598064333777781782737747599983002988478434433333245646"), "17,39")  // 17 bull, 39 pgia    
+		.CHECK_OUTPUT(calculateBullAndPgia("123456789123456789","023456789123456789"), "17,0") // 17 bull, 0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("21","11"), "1,0")                                  // 1 bull, 0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("0000002211333333", "3330003330002211"), "3,13")    // 3 bull, 13 pgia  
+		.CHECK_OUTPUT(calculateBullAndPgia("9909909","999900"), "5,2")  // 5 bull, 2 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("",""), "0,0")		// 0 bull, 0 pgia
+			
 		;
 
 		
